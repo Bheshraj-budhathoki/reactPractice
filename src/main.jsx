@@ -9,6 +9,7 @@ import About from './Firstproject/about.jsx';
 import Contact from './Firstproject/Contact.jsx';
 import ProductPage from './Firstproject/ProductPage.jsx'
 import Layout from './Firstproject/Layout.jsx';
+import ProductDetail from './Firstproject/ProductDetail.jsx'
 
 
 
@@ -25,6 +26,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/ProductPage" element={<ProductPage />} />
+        <Route path="/products/:id" element={<ProductDetail />} />
       </Routes>
       </Layout>
       

@@ -1,4 +1,6 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+
 
 function Product(props) {
     const markedPrice = props.product.price;
@@ -6,12 +8,13 @@ function Product(props) {
     const discount = (markedPrice*discount_percent)/100;
     const sellingPrice = (markedPrice -discount).toFixed(2);
   return (
-    <div>
+    <Link to={"/products/" + props.product.id}>
         
-        <div className='w-full bg-white rounded-xl shadow-md text-center p-2 hover:scale-90 scroll-smooth hover:shadow-2xl transition-all hover:bg-blue-500 hover:text-white'>
+        <div className='w-full bg-white rounded-xl shadow-md text-center p-2 hover:scale-90 scroll-smooth hover:shadow-2xl transition-all hover:bg-blue-500 hover:text-white'>    </div>
+
           {/* Watch Name */}
           <div className='w-full h-10 bg-purple-600 text-white flex items-center justify-center font-bold'>
-            This is my watch
+            Product{Product.id}
           </div>
           {/* Image */}
           <img
@@ -27,9 +30,7 @@ function Product(props) {
           <h1 className='text-lg font-semibold mt-2'>In Stock: {props.product.stock}</h1>
 
           {/* Price */}
-        </div>
-
-    </div>
+        </Link>
   )
 }
 
